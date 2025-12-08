@@ -1,10 +1,16 @@
 import type { Metadata } from "next";
 import { Onest } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 import { ThemeProvider } from "@/components/ui/theme-provider";
 
 const font = Onest({
   subsets: ["latin"],
+});
+
+const monocraft = localFont({
+  src: "Monocraft.otf",
+  variable: "--font-mono",
 });
 
 export const metadata: Metadata = {
@@ -19,7 +25,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${font.className} antialiased`} suppressHydrationWarning>
+      <body
+        className={`${font.className} antialiased ${monocraft.variable}`}
+        suppressHydrationWarning
+      >
         <ThemeProvider
           attribute="class"
           defaultTheme="dark"
