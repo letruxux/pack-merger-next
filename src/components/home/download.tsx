@@ -9,6 +9,8 @@ import usePackStore from "../stores/pack-store";
 import * as merger from "@letruxux/merge-packs";
 import { log } from "console";
 import { Loader } from "lucide-react";
+import ConfettiExplosion from "react-confetti-explosion";
+import { useWindowSize } from "react-use";
 
 const colors = {
   reset: "\x1b[0m",
@@ -22,6 +24,8 @@ export function Download() {
   const { description } = usePackStore();
   const [logs, setLogs] = useState<string[]>(["Click download to start!"]);
   const [isDownloading, setIsDownloading] = useState(false);
+  const [isConfetti, setIsConfetti] = useState(false);
+  const { width, height } = useWindowSize();
 
   async function startDownload() {
     setIsDownloading(true);
@@ -53,7 +57,6 @@ export function Download() {
           mcmeta
         ), */
       ]).then((e) => e.flat());
-      console.log(arraybufs, modrinthPacks);
 
       const buf = arraybufs[0];
       logger(`Merged ${localPacks.length + arraybufs.length} files`);
@@ -64,8 +67,17 @@ export function Download() {
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `${description.replace(/[^a-z0-9]/gi, "_")}.zip`;
+      a.download = `${description
+        .replace(/[<>:"/\\|?*]/g, "_")
+        .replace(/[\x00-\x1F\x7F]/g, "")
+        .replace(/^\.+/, "")
+        .replace(/^ +| +$/g, "")
+        .replace(/(^COM[0-9]|^LPT[0-9]|^CON|^PRN|^AUX|^NUL)/i, "_$1")}.zip`;
       a.click();
+      setIsConfetti(true);
+      setInterval(() => {
+        setIsConfetti(false);
+      }, 2200);
     } catch (e) {
       console.error(e);
       setLogs((logs) => [...logs, (e as Error).message]);
@@ -125,6 +137,14 @@ export function Download() {
                   </p>
                 ) : (
                   "download!!"
+                )}
+                {isConfetti && (
+                  <ConfettiExplosion
+                    force={0.4}
+                    duration={2200}
+                    particleCount={30}
+                    width={400}
+                  />
                 )}
               </GlareHover>
             </Button>

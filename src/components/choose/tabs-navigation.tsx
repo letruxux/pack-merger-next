@@ -2,6 +2,7 @@
 import { TabsList, TabsTrigger } from "@/components/ui/tabs";
 import useResourcesStore from "../stores/resources-store";
 import useTabStore from "../stores/tab-store";
+import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
 
 export default function TabsNavigation() {
   const { resources } = useResourcesStore();
@@ -21,13 +22,22 @@ export default function TabsNavigation() {
           />
         </TabsTrigger>
 
-        <TabsTrigger
-          onClick={() => setSelectedTab("curseforge")}
-          value="curseforge"
-          className="cursor-pointer"
-        >
-          CurseForge <img src="https://curseforge.com/favicon.ico" className="size-4" />
-        </TabsTrigger>
+        <Tooltip>
+          <TooltipTrigger>
+            <TabsTrigger
+              onClick={() => setSelectedTab("curseforge")}
+              value="curseforge"
+              className="cursor-pointer"
+              disabled
+            >
+              CurseForge{" "}
+              <img src="https://curseforge.com/favicon.ico" className="size-4" />
+            </TabsTrigger>
+          </TooltipTrigger>
+          <TooltipContent>
+            <p>Termporarily disabled</p>
+          </TooltipContent>
+        </Tooltip>
 
         <TabsTrigger
           onClick={() => setSelectedTab("local")}
