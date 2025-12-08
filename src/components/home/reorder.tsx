@@ -16,7 +16,7 @@ export function Reorder() {
   }, [resources]);
 
   return (
-    <div id="reorder" className="w-full h-screen flex justify-center items-center">
+    <div id="reorder" className="w-full h-dvh flex justify-center items-center">
       <div className="w-full">
         <Button
           className="mb-6 mx-auto block pointer-events-auto cursor-pointer scale-100 hover:scale-110 px-0 bg-gray-400 hover:bg-gray-500 h-10 w-10"
@@ -27,7 +27,7 @@ export function Reorder() {
         </Button>
         <h1 className="text-4xl font-[Monocraft] text-center mb-8">Final touches</h1>
 
-        <Card className="max-w-2xl w-full h-[60vh] mx-auto rounded-none px-4">
+        <Card className="max-w-2xl w-full h-[60dvh] mx-auto rounded-none px-4">
           <div
             className="w-full h-28 -mb-2 flex"
             style={{ backgroundImage: "url(/dirt.png)" }}
