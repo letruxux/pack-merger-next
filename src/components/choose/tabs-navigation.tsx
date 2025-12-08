@@ -8,7 +8,7 @@ export default function TabsNavigation() {
   const { setSelectedTab } = useTabStore();
   return (
     <div className="flex items-center h-8">
-      <TabsList className="grid grid-cols-3 gap-4 mb-4">
+      <TabsList className="grid grid-cols-3 gap-4 mb-4 mr-2">
         <TabsTrigger
           onClick={() => setSelectedTab("modrinth")}
           value="modrinth"
@@ -52,7 +52,7 @@ export default function TabsNavigation() {
         </TabsTrigger>
       </TabsList>
       <div className="flex flex-1"></div>
-      <span className="mb-4">
+      <span className="mb-4 truncate block">
         <span className="text-green-500">{resources.length} </span>texture packs selected
       </span>
     </div>

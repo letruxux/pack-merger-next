@@ -252,7 +252,7 @@ function CurseforgePackItem({ pack }: { pack: CurseforgePack | CurseforgePack2 }
 
 export default function CurseforgeTab() {
   const versions = useVersions();
-  const [version, setVersion] = useState<string>("");
+  const { version, setVersion } = useResourcesStore();
   const [query, setQuery] = useState<string>("");
 
   const {
@@ -306,7 +306,7 @@ export default function CurseforgeTab() {
           {(isLoading || isValidating) && <Loader className="mr-2 animate-spin" />} Search
         </Button>
       </div>
-      <div className="w-full h-[31rem] overflow-y-scroll">
+      <div className="w-full h-[calc(60vh-72px-48px)] overflow-y-scroll">
         {(packs ?? []).map((p) => (
           <CurseforgePackItem key={p.slug} pack={p as any} />
         ))}

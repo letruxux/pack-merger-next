@@ -102,7 +102,7 @@ function PackItem({ pack }: { pack: SearchResultHit }) {
 
 export default function ModrinthTab() {
   const versions = useVersions();
-  const [version, setVersion] = useState<string>("");
+  const { version, setVersion } = useResourcesStore();
   const [query, setQuery] = useState<string>("");
 
   const {
@@ -158,7 +158,7 @@ export default function ModrinthTab() {
           {(isLoading || isValidating) && <Loader className="mr-2 animate-spin" />} Search
         </Button>
       </div>
-      <div className="w-full h-[31rem] overflow-y-scroll">
+      <div className="w-full overflow-y-scroll h-[calc(60vh-72px-48px)]">
         {(packs ?? []).map((e) => (
           <PackItem key={e.slug} pack={e} />
         ))}
