@@ -15,7 +15,7 @@ export default function TabsNavigation() {
           value="modrinth"
           className="cursor-pointer"
         >
-          Modrinth{" "}
+          <span className="md:hidden">Modrinth{" "}</span>
           <img
             src="https://raw.githubusercontent.com/gabrielvicenteYT/modrinth-icons/refs/heads/main/Branding/Favicon/favicon.svg"
             className="size-4"
