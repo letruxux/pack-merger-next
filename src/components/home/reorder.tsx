@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 import useResourcesStore from "../stores/resources-store";
 import { Button } from "../ui/button";
 import { scrollTo } from "@/lib/utils";
@@ -10,13 +10,18 @@ import usePackStore from "../stores/pack-store";
 export function Reorder() {
   const { resources } = useResourcesStore();
   const { description, setDescription } = usePackStore();
+  const reorderRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (resources.length === 0) scrollTo(2);
-  }, [resources]);
+    if (resources.length === 0 && window.scrollY !== 0) scrollTo(2);
+  }, [resources, reorderRef]);
 
   return (
-    <div id="reorder" className="w-full h-dvh flex justify-center items-center">
+    <div
+      id="reorder"
+      className="w-full h-dvh flex justify-center items-center"
+      ref={reorderRef}
+    >
       <div className="w-full">
         <Button
           className="mb-6 mx-auto block pointer-events-auto cursor-pointer scale-100 hover:scale-110 px-0 bg-gray-400 hover:bg-gray-500 h-10 w-10"

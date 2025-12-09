@@ -8,7 +8,7 @@ import { scrollTo } from "@/lib/utils";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
-  /* useEffect(() => {
+  useEffect(() => {
     const handleResize = () => {
       const step = window.innerHeight;
       const targetY = Math.ceil(window.scrollY / step) * step;
@@ -20,7 +20,7 @@ export default function Home() {
       window.addEventListener("resize", handleResize);
     }, 1000);
     return () => window.removeEventListener("resize", handleResize);
-  }, []); */
+  }, []);
 
   return (
     <main>
