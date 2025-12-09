@@ -6,7 +6,7 @@ import { Github, Globe } from "lucide-react";
 
 export function Hero() {
   return (
-    <div id="hero" className="w-full h-screen relative">
+    <div id="hero" className="w-full h-dvh relative">
       <Dither
         waveColor={[0.4, 0.6, 0.4]}
         disableAnimation={false}
@@ -17,7 +17,7 @@ export function Hero() {
         waveFrequency={3}
         waveSpeed={0.05}
       />
-      <div className="absolute left-0 top-0 w-full h-screen pointer-events-none">
+      <div className="absolute left-0 top-0 w-full h-dvh pointer-events-none">
         <div className="absolute bottom-4 h-8 px-4 w-full flex justify-between items-center gap-4">
           <a href="https://github.com/letruxux" target="_blank">
             <Github className="size-8 pointer-events-auto cursor-pointer scale-100 hover:scale-110 transition-transform" />
@@ -38,7 +38,7 @@ export function Hero() {
         </div>
       </div>
 
-      <div className="absolute left-0 top-0 w-full h-screen flex justify-center items-center pointer-events-none">
+      <div className="absolute left-0 top-0 w-full h-dvh flex justify-center items-center pointer-events-none">
         <div>
           <h1 className="text-7xl font-[Monocraft] text-center">Merge your packs</h1>
           <Button
