@@ -9,13 +9,13 @@ export default function TabsNavigation() {
   const { setSelectedTab } = useTabStore();
   return (
     <div className="flex items-center h-8">
-      <TabsList className="grid grid-cols-2 gap-4 mb-4 mr-2">
+      <TabsList className="grid grid-cols-2 gap-2 md:gap-4 mb-4 mr-2">
         <TabsTrigger
           onClick={() => setSelectedTab("modrinth")}
           value="modrinth"
           className="cursor-pointer"
         >
-          <span className="hidden md:inline">Modrinth{" "}</span>
+          <span className="hidden md:inline">Modrinth </span>
           <img
             src="https://raw.githubusercontent.com/gabrielvicenteYT/modrinth-icons/refs/heads/main/Branding/Favicon/favicon.svg"
             className="size-4"
@@ -44,7 +44,7 @@ export default function TabsNavigation() {
           value="local"
           className="cursor-pointer"
         >
-          <span className="hidden md:inline">Local{" "}</span>
+          <span className="hidden md:inline">Local </span>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"

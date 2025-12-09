@@ -17,7 +17,7 @@ export function PackItem({ pack, index }: { pack: Resource; index: number }) {
           )}
         </a>
       </ItemMedia>
-      <ItemContent>
+      <ItemContent className="truncate">
         <ItemTitle>{pack.name}</ItemTitle>
       </ItemContent>
       <ItemActions>

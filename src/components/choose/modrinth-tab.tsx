@@ -68,10 +68,15 @@ function PackItem({ pack }: { pack: SearchResultHit }) {
         </a>
       </ItemMedia>
       <ItemContent>
-        <ItemTitle>
-          <a href={"https://modrinth.com/resourcepack/" + pack.slug} target="_blank">
-            {pack.title} <span className="text-sm text-gray-500">{pack.author}</span>
+        <ItemTitle className="w-full">
+          <a
+            href={"https://modrinth.com/resourcepack/" + pack.slug}
+            target="_blank"
+            title={pack.title}
+          >
+            {pack.title}
           </a>
+          <span className="text-sm text-gray-500 hidden md:inline">{pack.author}</span>
         </ItemTitle>
         <ItemDescription className="flex items-center">
           {(pack.downloads ?? 0).toLocaleString()}

@@ -41,7 +41,7 @@ export function Reorder() {
               value={description}
               onChange={(e) => setDescription(e.target.value)}
               type="text"
-              className="h-28 w-full pl-4 font-[Monocraft]"
+              className="h-28 w-full pl-4 font-[Monocraft] flex items-center"
               maxLength={32}
             />
           </div>

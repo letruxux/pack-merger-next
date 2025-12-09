@@ -23,7 +23,7 @@ export function Hero() {
             <Github className="size-8 pointer-events-auto cursor-pointer scale-100 hover:scale-110 transition-transform" />
           </a>
 
-          <p className="pointer-events-auto group">
+          <p className="pointer-events-auto group text-center">
             powered by{" "}
             <a href="https://www.npmjs.com/package/@letruxux/merge-packs" target="_blank">
               <code className="inline text-green-300 group-hover:underline">
