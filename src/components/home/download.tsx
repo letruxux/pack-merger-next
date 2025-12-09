@@ -148,7 +148,7 @@ export function Download() {
                 )}
               </GlareHover>
             </Button>
-            <pre className="bg-black/20 h-[calc(60vh-128px-86px-16px)] p-3 py-2 overflow-y-scroll">
+            <pre className="bg-black/20 h-[calc(60dvh-128px-86px-16px)] p-3 py-2 overflow-y-scroll">
               {logs.map((e, i) => (
                 <span key={i} className="block">
                   {e
