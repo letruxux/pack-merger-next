@@ -9,7 +9,7 @@ export default function TabsNavigation() {
   const { setSelectedTab } = useTabStore();
   return (
     <div className="flex items-center h-8">
-      <TabsList className="grid grid-cols-3 gap-4 mb-4 mr-2">
+      <TabsList className="grid grid-cols-2 gap-4 mb-4 mr-2">
         <TabsTrigger
           onClick={() => setSelectedTab("modrinth")}
           value="modrinth"
