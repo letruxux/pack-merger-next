@@ -158,7 +158,7 @@ export default function ModrinthTab() {
           {(isLoading || isValidating) && <Loader className="mr-2 animate-spin" />} Search
         </Button>
       </div>
-      <div className="w-full overflow-y-scroll h-[calc(60vh-72px-48px)]">
+      <div className="w-full overflow-y-scroll h-[calc(60dvh-72px-48px)]">
         {(packs ?? []).map((e) => (
           <PackItem key={e.slug} pack={e} />
         ))}
