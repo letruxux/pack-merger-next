@@ -22,7 +22,7 @@ export default function TabsNavigation() {
           />
         </TabsTrigger>
 
-        <Tooltip>
+        {/*<Tooltip>
           <TooltipTrigger>
             <TabsTrigger
               onClick={() => setSelectedTab("curseforge")}
@@ -37,7 +37,7 @@ export default function TabsNavigation() {
           <TooltipContent>
             <p>Termporarily disabled</p>
           </TooltipContent>
-        </Tooltip>
+        </Tooltip>*/}
 
         <TabsTrigger
           onClick={() => setSelectedTab("local")}
